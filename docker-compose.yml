@@ -15,14 +15,13 @@ services:
     environment:
       - DEBUG=True
       - DOCKER=True
+      - PG=True
       - SECRET_KEY="django-insecure-@!1golkp4p!x&rmm6qb90kh-r@4v2slj7+qbbi!%36hu)s--30"
-      - DB_NAME=superdb
+      - DB_NAME=super
       - DB_USER=u
       - DB_PASSWORD=j
       - DB_HOST=db
-      # - DB_PORT=5432
-    # env_file:
-    #   - ./dj/.env
+      - DB_PORT=5432
 
   db:
     image: novodevz/mysuperproj:db

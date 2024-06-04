@@ -6,11 +6,15 @@
 
 ### DB: PostgreSQL
 
-## Watch the live site at: [super.novodevz.com](https://super.novodevz.com)
+##
+
+### Watch the live site at: [super.novodevz.com](https://super.novodevz.com)
+
+##
 
 ## Run:
 
-git clone url  
+git clone https://github.com/novodevz/mysuperproj.git  
 cd mysuperproj  
 docker-compose up  
 Go to: [localhost:3000](localhost:3000)

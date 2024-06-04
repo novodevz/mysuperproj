@@ -2,12 +2,12 @@ version: '3'
 
 services:
   front:
-    image: novodevz/super:rctv1
+    image: novodevz/super:rct
     ports:
       - "3000:3000"
 
   back:
-    image: novodevz/super:djv1
+    image: novodevz/super:dj
     ports:
       - "8000:8000"
     depends_on:
@@ -25,7 +25,7 @@ services:
     #   - ./dj/.env
 
   db:
-    image: novodevz/super:dbv1
+    image: novodevz/super:db
     environment:
       POSTGRES_DB: superdb
       POSTGRES_USER: u

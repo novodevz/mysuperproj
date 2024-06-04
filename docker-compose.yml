@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  front:
+    image: novodevz/super:rctv1
+    ports:
+      - "3000:3000"
+
+  back:
+    image: novodevz/super:djv1
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=True
+      - DOCKER=True
+      - SECRET_KEY="django-insecure-@!1golkp4p!x&rmm6qb90kh-r@4v2slj7+qbbi!%36hu)s--30"
+      - DB_NAME=superdb
+      - DB_USER=u
+      - DB_PASSWORD=j
+      - DB_HOST=db
+      # - DB_PORT=5432
+    # env_file:
+    #   - ./dj/.env
+
+  db:
+    image: novodevz/super:dbv1
+    environment:
+      POSTGRES_DB: superdb
+      POSTGRES_USER: u
+      POSTGRES_PASSWORD: j
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - ./superdb_dump.sql:/docker-entrypoint-initdb.d/superdb_dump.sql
